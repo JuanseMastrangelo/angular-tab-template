@@ -1,0 +1,25 @@
+.main_content {
+    width:100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    & > div {
+        margin: 0px auto;
+    }
+}
+  
+button:focus {
+    outline: 0px !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.sideOpenTrue{
+    margin: 40px 0px 0px 250px !important;
+    padding-top: 10px !important;
+}
+
+.sideOpenFalse{
+    margin: 40px 0px 0px 60px !important;
+    padding-top: 10px !important;
+}

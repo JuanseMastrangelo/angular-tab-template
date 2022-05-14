@@ -1,0 +1,21 @@
+<div class="col-12 px-4">
+    <div class="container-fluid mt-0 p-0 main-component" *ngIf="tabs.length > 0">
+        <mat-tab-group class="main-tab-group rounded-lg pb-4 text-dark" [selectedIndex]="selectedTab">
+            <mat-tab *ngFor="let tab of tabs; let tabIndex = index" class="border border-primary mb-2 rounded-lg">
+                <ng-template mat-tab-label class="border-left mat-card">
+                    <div class="d-flex justify-content-between col-12 align-items-center"
+                        (middleclick)="removeTab(tabIndex, tab.uuid)">
+                        <div>
+                            <small>{{ tab.title }}</small>
+                        </div>
+                        <small class="ml-2">
+                            <i class="fa fa-close text-secondary" (click)="removeTab(tabIndex, tab.uuid)"></i>
+                        </small>
+                    </div>
+                </ng-template>
+                <app-tab-content [tab]="tab"></app-tab-content>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+    <div class="col-6 position"></div>
+</div>

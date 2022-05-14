@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+.main-component > .main-tab-group > .mat-tab-body-wrapper > .mat-tab-body > .mat-tab-body-content { overflow-x: hidden; }
+.main-component > .main-tab-group > .mat-tab-header > .mat-tab-label-container > .mat-tab-list > .mat-tab-labels > .mat-tab-label { text-transform: uppercase;opacity: 1!important;height: 40px!important;color: #999 !important;font-weight: 500!important; }
+.main-component > .main-tab-group > .mat-tab-header > .mat-tab-label-container > .mat-tab-list > .mat-tab-labels > .mat-tab-label-active { opacity: 1!important;border-bottom: 3px solid #00AEEf!important; text-transform: uppercase; color: #00AEEf !important;font-weight: 500!important;}
+.main-component > .main-tab-group > .mat-tab-header > .mat-tab-label-container > .mat-tab-list > .mat-ink-bar { visibility: hidden!important; }
+.main-component > .main-tab-group > .mat-tab-header { margin-bottom: 0.5rem !important;border-radius: 0.3rem !important;}
+ 

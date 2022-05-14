@@ -1,0 +1,37 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+// Default
+$apprrhh-primary: mat-palette($mat-indigo);
+$apprrhh-accent: mat-palette($mat-pink, A200, A100, A400);
+$apprrhh-warn: mat-palette($mat-red);
+$apprrhh-theme: mat-light-theme($apprrhh-primary, $apprrhh-accent, $apprrhh-warn);
+@include angular-material-theme($apprrhh-theme);
+
+
+// Dark theme
+$dark-primary: mat-palette($mat-blue-grey);
+$dark-accent:  mat-palette($mat-amber, A200, A100, A400);
+$dark-warn:    mat-palette($mat-deep-orange);
+$dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+.dark-theme {
+  @include angular-material-theme($dark-theme);
+}
+
+// Light theme
+$light-primary: mat-palette($mat-indigo);
+$light-accent: mat-palette($mat-brown, 200);
+$light-warn: mat-palette($mat-deep-orange, 200);
+
+$light-theme: mat-light-theme($light-primary, $light-accent, $light-warn);
+
+.light-theme {
+  @include angular-material-theme($light-theme)
+}
+
+.mat-chip.mat-standard-chip.mat-chip-selected.mat-primary {
+    background-color: #3f51b5!important;
+    font-weight: 400!important;
+}
+
