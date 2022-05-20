@@ -47,6 +47,7 @@ export class LeftMenuComponent implements OnInit {
 
 
     onSinenavToggle(value?) {
+        console.log(value);
         this.sideNavState = value || !this.sideNavState;
         if (!this.sideNavState) { (<any>$('.collapse')).collapse('hide'); }
         this.linkText = this.sideNavState;
