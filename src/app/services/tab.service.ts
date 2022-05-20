@@ -40,6 +40,7 @@ export class TabService {
         tab.active = true;
         this.tabs.push(tab);
         this.tabSub.next(this.tabs);
+        console.log(this.tabs);
     }
 
 
@@ -59,6 +60,7 @@ export class TabService {
      * @param path Ruta necesaria para el decorador @ComponentLookup
      */
     addNewTab(name: string, path: string, data?: object, uuid?: string) {
+        console.log(name, path);
         const getComponentsFromList = componentOpenOneTime.filter((tab: any) => tab.name === name);
         let dataObject = { parent: 'AppComponent', path };
         if (data) { dataObject = Object.assign({}, dataObject, data); }

@@ -1,0 +1,104 @@
+<span *ngIf="!modulos" class="h-100 d-flex align-items-center justify-content-center" style="width: 50px">
+    <div class="spinner-border text-secondary spinner-border-sm" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</span>
+<div class="sidenav_container shadow bg-theme-secondary" [@onSideNavChange]="sideNavState ? 'open' : 'close'">
+
+    <div fxLayout="column" fxLayoutGap="10px" style="height: 100%;" *ngIf="modulos" class="bg-theme-primary">
+
+        <nav id="sidebar">
+            <mat-nav-list class="p-0">
+                <a href="#subMenuUsuario" mat-list-item matTooltip="{{user.UsuarioNombreCompleto}}"
+                    matTooltipPosition="right"
+                    [ngClass]="{'d-flex justify-content-center': !sideNavState, 'dropdown-toggle collapsed': sideNavState}"
+                    [attr.data-toggle]="sideNavState ? 'collapse' : null" aria-expanded="false"
+                    (click)="!sideNavState && onSinenavToggle(true)" class="UserMenu bg-theme-secondary">
+
+                    <div [ngClass]="{'d-flex justify-content-center align-items-center': sideNavState}">
+
+                        <img *ngIf="user && userFoto" class="jim" src={{userFoto}} alt="">
+                        <img *ngIf="user && (userFoto === undefined || userFoto === null)" class="jim"
+                            src="assets/images/user-no-image.png" alt="">
+
+                        <small class="font-weight pe-1 ps-3" [@animateText]="linkText ? 'show' : 'hide'">
+                            {{user.UsuarioNombreCompleto}}
+                        </small>
+                    </div>
+                </a>
+
+                <ul class="list-unstyled mb-0" id=subMenuUsuario data-parent="#sidebar">
+
+                    <mat-nav-list class="p-0">
+
+                        <a href="#" mat-list-item class="col-12 menuModulo bg-theme-secondary" style="height: 30px;"
+                            (click)="addNewTab('Perfil Usuario', 'perfilUsuario')"
+                            [ngClass]="{'d-flex justify-content-center': !sideNavState, 'dropdown-toggle collapsed': sideNavState}"
+                            [attr.data-toggle]="sideNavState ? 'collapse' : null" aria-expanded="false">
+                            <div class="col-12 m-0" [ngClass]="{'d-flex align-items-center': sideNavState}">
+                                <i class="fa fa-user d-inline-block text-theme-primary" style="font-size: 12px"></i>
+                                <small class="ms-2" [@animateText]="linkText ? 'show' : 'hide'">My profile</small>
+                            </div>
+                        </a>
+
+                        <a href="#" mat-list-item class="col-12 menuModulo bg-theme-secondary" style="height: 30px;"
+                            (click)="addNewTab('Cambiar Clave', 'resetPassword')"
+                            [ngClass]="{'d-flex justify-content-center': !sideNavState, 'dropdown-toggle collapsed': sideNavState}"
+                            [attr.data-toggle]="sideNavState ? 'collapse' : null" aria-expanded="false">
+                            <div class="col-12 m-0" [ngClass]="{'d-flex align-items-center': sideNavState}">
+                                <i class="fa fa-key d-inline-block text-theme-primary" style="font-size: 12px"></i>
+                                <small class="ms-2" [@animateText]="linkText ? 'show' : 'hide'">Change password</small>
+                            </div>
+                        </a>
+
+                    </mat-nav-list>
+                </ul>
+            </mat-nav-list>
+
+            <mat-divider></mat-divider>
+
+            <div *ngFor="let modulo of modulos; index as i;">
+                <mat-nav-list class="p-0" [ngClass]="{'BordesMenu': !sideNavState}">
+
+                    <a href="#modulo{{i}}" data-bs-toggle="collapse" mat-list-item matTooltip="{{modulo.Nombre}}" matTooltipPosition="right"
+                        class="col-12 menuModulo" (click)="!sideNavState && onSinenavToggle(true)"
+                        [ngClass]="{'d-flex justify-content-center': !sideNavState,'dropdown-toggle collapsed': sideNavState}"
+                        [attr.data-toggle]="sideNavState ? 'collapse' : null" aria-expanded="false"
+                        (click)="modulo.Accion && addNewTab(modulo.Nombre, modulo.Accion)">
+                        <div class="col-12 m-0"
+                            [ngClass]="{'d-flex justify-content-between align-items-center': sideNavState}">
+                            <div>
+                                <i class="fa {{modulo.Icono}} d-inline-block text-theme-primary"
+                                    style="font-size: 12px"></i>
+                                <small class="ms-2"
+                                    [@animateText]="linkText ? 'show' : 'hide'">{{modulo.Nombre}}</small>
+                            </div>
+                            <button [@animateText]="linkText ? 'show' : 'hide'" mat-icon-button>
+                                <mat-icon>keyboard_arrow_right</mat-icon>
+                            </button>
+                        </div>
+                    </a>
+                    <ul class="list-unstyled mb-0 BordesMenuBottom collapse" id=modulo{{i}} *ngIf="modulo.Submenus && sideNavState"
+                        data-parent="#sidebar">
+                        <app-side-submenu [Submenus]="modulo.Submenus" [Contador]="0" [PaddingLeft]="20">
+                        </app-side-submenu>
+
+                    </ul>
+                </mat-nav-list>
+            </div>
+        </nav>
+
+    </div>
+
+    <span class="spacer" *ngIf="modulos"></span>
+    <div fxLayout="row" fxLayoutAlign="end center" style="bottom: 100px" class="text-center col-12 position-absolute"
+        *ngIf="modulos" style="bottom: 10px">
+        <div class="px-2">
+            <button class="btn col-12 btn-sm btn-light border text-dark pt-2 pb-2" (click)="onSinenavToggle()"
+                [matTooltip]="sideNavState? 'Hide menú' : 'Show menú'" matTooltipPosition="right">
+                <span *ngIf="sideNavState"><i class="fa fa-angle-double-left"></i> Hide</span>
+                <i *ngIf="!sideNavState" class="fa fa-angle-double-right"></i>
+            </button>
+        </div>
+    </div>
+</div>

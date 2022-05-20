@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ComponentLookup } from 'src/app/decorators/components.decorators';
 
+@ComponentLookup('dashboard')
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',

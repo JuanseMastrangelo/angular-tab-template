@@ -1,8 +1,10 @@
 :root {
+    --dark: #25282A;
+    --white: #FFFFFF;
     --text-dark: #212529;
     --ligth-secondary: #EDF1F7;
     --text-ligth: #49536C;
-    --background-dark-secondary: #272E3C;
+    --background-dark-secondary: #1E2022;
     --background-ligth-secondary: #1F2430;
 }
 
@@ -13,7 +15,6 @@
     .bg-theme-secondary { background: var(--background-dark-secondary)!important; color: var(--white)!important; font-weight: 400; }
     .text-theme { color: var(--white)!important; font-weight: 400; }
     .text-theme-primary { color: var(--primary)!important; }
-
 }
 
 
@@ -25,3 +26,12 @@
     .text-theme-primary { color: var(--text-dark)!important; }
 
 }
+
+
+/* Personalizados a un componente: */
+.dark-theme .main-component > .main-tab-group > .mat-tab-header > .mat-tab-label-container { background: var(--background-dark-secondary)!important; }
+.ligth-theme .main-component > .main-tab-group > .mat-tab-header > .mat-tab-label-container { background: var(--background-ligth-secondary)!important; }
+
+
+.dark-theme .profile-head .nav-tabs .nav-link.active { color: white!important; }
+.ligth-theme .profile-head .nav-tabs .nav-link.active { color: #495057!important; }

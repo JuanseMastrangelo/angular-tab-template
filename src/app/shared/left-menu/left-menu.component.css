@@ -1,0 +1,73 @@
+.sidenav_container {
+    min-width: 60px;
+    height: 100vh;
+    position: fixed;
+    padding-top: 40px; /* es igual a la altura del header*/
+    background: white;
+}
+
+.jim {
+    /* width: 50px; */
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #58585A;
+    /* border: 2px solid rgba(0, 128, 0, .4); */
+}
+
+.UserMenu {
+    background-color: #fff;
+    /* padding: 5px; */
+    height: 60px !important;
+}
+
+.menuModulo{
+    height: 40px !important; 
+}
+
+.menuModulo[aria-expanded="true"]  {
+    border-top: 1px solid rgba(100, 100, 100, 0.4);
+    /* background-color: #007BFF !important; */
+}
+
+.BordesMenuBottom{
+    border-bottom: 1px solid rgba(100, 100, 100, 0.4);
+}
+
+
+#sidebar {
+    height: 80%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.dropdown-toggle::after {
+    display: none!important;
+}
+
+a[aria-expanded="true"] button {
+    transform: rotate(90deg);
+}
+
+
+/* Scrollbar */
+
+#sidebar::-webkit-scrollbar {
+    width: 3px;
+}
+
+#sidebar::-webkit-scrollbar-track {
+    background-color: #ccc;
+}
+
+#sidebar::-webkit-scrollbar-thumb {
+    background-color: #0055b2;
+}
+
+#sidebar::-webkit-scrollbar-button {
+    display: none
+}
+
+.mat-nav-list:hover>a i {
+    color: #007BFF;
+}

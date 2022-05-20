@@ -1,7 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Open+Sans:wght@500&display=swap');
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Inter, sans-serif }
 
 
 
@@ -11,3 +12,64 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .main-component > .main-tab-group > .mat-tab-header > .mat-tab-label-container > .mat-tab-list > .mat-ink-bar { visibility: hidden!important; }
 .main-component > .main-tab-group > .mat-tab-header { margin-bottom: 0.5rem !important;border-radius: 0.3rem !important;}
  
+app-main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+mat-icon-button {
+    width: 25px!important;
+    height: 25px!important;
+    min-width: inherit!important;
+    min-height: inherit!important;
+    line-height: 0px!important;
+}
+
+.dropdown-toggle::after {display: none !important;}
+
+button:focus,
+input:focus {
+  outline: 0px !important;
+  box-shadow: none !important;
+}
+
+  
+.menuModulo:focus {
+    background: transparent!important;
+}
+.btn-transparent {
+    background: transparent!important;
+}
+.btn-transparent:focus {
+    background: transparent!important;
+}
+/* Custom class */
+.border-weight-2 {
+    border-width: medium!important;
+}
+.border-lg {
+    border-width: 5px;
+}
+
+
+/* modifico los pills */
+.nav-link { 
+    color: #00AEEf !important;}
+.nav-link.active { 
+    background-color: #00AEEf !important;
+    color: #fff !important;}
+
+.nav-link .fa-close{    
+    background: rgba(100, 100, 100, 0);
+    border-radius: 100%;
+    padding: 4px 5px;
+}
+.nav-link .fa-close:hover {
+    color: rgb(220, 53, 69)!important;    
+    background: rgba(100, 100, 100, .1);   
+}
+
+.cursor-pointer { cursor: pointer!important; }
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

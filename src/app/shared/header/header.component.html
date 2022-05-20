@@ -1,0 +1,55 @@
+<div class="header row m-0 d-flex align-items-center justify-content-between shadow text-white">
+
+    <div class="col-auto">
+        <div class="d-inline-block d-flex align-items-center">
+            <div class="circulo d-flex align-items-center justify-content-center">
+                <img src="favicon.ico" class="me-2 ms-2 h-60" />
+            </div>
+            <span class="ps-3" style="font-size:24px;"> Angular Tabs</span>
+            <small class="ps-3"> {{version}}</small>
+        </div>
+    </div>
+
+    <div class="col-auto" fxShow fxHide.md>
+        <div class="d-flex align-items-center justify-content-center">
+            <small class="me-2" style="font-size:16px;"> {{ time | date: 'HH:mm' }}</small>
+            <small class="me-2" style="font-size:16px;"> {{ time | date: 'dd/MM/yyyy' }}</small>
+        </div>
+    </div>
+
+    <div class="col-auto">
+        <div class="d-inline-block d-flex align-items-center justify-content-end">
+
+            <button class="me-2 ms-2" mat-icon-button data-toggle="modal" data-target="#appModal">
+                <i class="fa fa-th-large" aria-hidden="true"></i>
+            </button>
+            <a href="#" class="mr-2 dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false" id="notifications" data-bs-toggle="dropdown">
+                <div class="badge-notification text-white">
+                    <span class="pulse text-white">1</span>
+                    <i class="fa fa-bell-o"></i>
+                </div>
+            </a>
+            <ul class="dropdown-menu notify-drop p-0" aria-labelledby="notifications">
+                <div class="col-12 d-flex justify-content-between border-bottom py-2">
+                    <div class="col-md-6 col-sm-6 col-xs-6 px-2"><small>Notifications</small></div>
+                    <div class="col-md-6 col-sm-6 col-xs-6 text-right"><a href="#" class="rIcon allRead"
+                            data-tooltip="tooltip" data-placement="bottom" title="tümü okundu."><i
+                                class="fa fa-dot-circle-o"></i></a></div>
+                </div>
+                <div class="col-12 p-0" style="background: #F5F5F5">
+                    <div class="col-12 d-flex justify-content-center align-items-center">
+                        <img src="./assets/illustrations/notification-empty.png" alt="" class="col-7">
+                    </div>
+                </div>
+                <div class="col-12 p-0 d-flex justify-content-center align-items-center py-1 border-top">
+                    <span><i class="fa fa-bell-slash-o"></i> Mute notifications</span>
+                </div>
+            </ul>
+
+            <button mat-icon-button>
+                <i class="fa fa-power-off"></i>
+            </button>
+        </div>
+    </div>
+
+</div>

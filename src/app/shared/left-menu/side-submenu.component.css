@@ -1,0 +1,16 @@
+.dropdown-toggle::after {
+    display:none!important;
+}
+
+a[aria-expanded="true"] button:first-child {
+  transform: rotate(90deg);
+}
+.active-link i {
+  color: #0055b2!important;
+}
+.submenu {
+  background: #F5F5F5;
+}
+.button-open-submenu {
+  background: transparent!important;
+}

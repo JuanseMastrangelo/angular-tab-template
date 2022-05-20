@@ -1,1 +1,395 @@
-<p>dashboard works!</p>
+<div class="content container-fluid mt-3 px-3">
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="row align-items-center mb-2">
+            <div class="col">
+                <h1 class="page-header-title text-theme m-0">Dashboard</h1>
+            </div>
+            <!-- End Col -->
+
+            <div class="col-auto">
+                <a class="btn btn-primary" href="javascript:;" data-bs-toggle="modal" data-bs-target="#inviteUserModal">
+                    <i class="bi-person-plus-fill me-1"></i> Invite users
+                </a>
+            </div>
+            <!-- End Col -->
+        </div>
+        <!-- End Row -->
+    </div>
+    <!-- End Page Header -->
+
+    <!-- Stats -->
+    <div class="row">
+        <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
+            <!-- Card -->
+            <a class="card card-hover-shadow h-100 bg-theme-primary" href="#">
+                <div class="card-body">
+                    <h6 class="card-subtitle">Total Users</h6>
+
+                    <div class="row align-items-center gx-2 mb-1">
+                        <div class="col-6">
+                            <h2 class="card-title text-inherit text-theme">72,540</h2>
+                        </div>
+                        <!-- End Col -->
+                    </div>
+                    <!-- End Row -->
+
+                    <span class="badge bg-soft-success text-success">
+                        <i class="bi-graph-up"></i> 12.5%
+                    </span>
+                    <span class="text-body fs-6 ms-1 text-theme">from 70,104</span>
+                </div>
+            </a>
+            <!-- End Card -->
+        </div>
+
+
+        <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
+            <!-- Card -->
+            <a class="card card-hover-shadow h-100 bg-theme-primary" href="#">
+                <div class="card-body">
+                    <h6 class="card-subtitle">Sessions</h6>
+
+                    <div class="row align-items-center gx-2 mb-1">
+                        <div class="col-6">
+                            <h2 class="card-title text-inherit text-theme">29.5%</h2>
+                        </div>
+                        <!-- End Col -->
+                    </div>
+                    <!-- End Row -->
+
+                    <span class="badge bg-soft-success text-success">
+                        <i class="bi-graph-up"></i> 1.7%
+                    </span>
+                    <span class="text-body fs-6 ms-1 text-theme">from 29.01%</span>
+                </div>
+            </a>
+            <!-- End Card -->
+        </div>
+
+
+        <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
+            <!-- Card -->
+            <a class="card card-hover-shadow h-100 bg-theme-primary" href="#">
+                <div class="card-body">
+                    <h6 class="card-subtitle">Avg. Click Rate</h6>
+
+                    <div class="row align-items-center gx-2 mb-1">
+                        <div class="col-6">
+                            <h2 class="card-title text-inherit text-theme">56.8%</h2>
+                        </div>
+                        <!-- End Col -->
+                    </div>
+                    <!-- End Row -->
+
+                    <span class="badge bg-soft-success text-success">
+                        <i class="bi-graph-up"></i> 4.4%
+                    </span>
+                    <span class="text-body fs-6 ms-1 text-theme">from 61.2%</span>
+                </div>
+            </a>
+            <!-- End Card -->
+        </div>
+
+
+        <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
+            <!-- Card -->
+            <a class="card card-hover-shadow h-100 bg-theme-primary" href="#">
+                <div class="card-body">
+                    <h6 class="card-subtitle">PageViews</h6>
+
+                    <div class="row align-items-center gx-2 mb-1">
+                        <div class="col-6">
+                            <h2 class="card-title text-inherit text-theme">92,913</h2>
+                        </div>
+                        <!-- End Col -->
+                    </div>
+                    <!-- End Row -->
+
+                    <span class="badge bg-soft-success text-success">
+                        <i class="bi-graph-up"></i> 0.0%
+                    </span>
+                    <span class="text-body fs-6 ms-1 text-theme">from 2,913</span>
+                </div>
+            </a>
+            <!-- End Card -->
+        </div>
+    </div>
+    <!-- End Stats -->
+
+
+    <!-- Card -->
+    <div class="card mb-3 mb-lg-5 bg-theme-primary">
+        <!-- Header -->
+        <div class="card-header bg-theme-primary">
+            <div class="row justify-content-between align-items-center flex-grow-1">
+                <div class="col-md">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="card-header-title m-0 text-theme">Users</h4>
+
+                        <!-- Datatable Info -->
+                        <div id="datatableCounterInfo" style="display: none;">
+                            <div class="d-flex align-items-center">
+                                <span class="fs-6 me-3">
+                                    <span id="datatableCounter">0</span>
+                                    Selected
+                                </span>
+                                <a class="btn btn-outline-danger btn-sm" href="javascript:;">
+                                    <i class="tio-delete-outlined"></i> Delete
+                                </a>
+                            </div>
+                        </div>
+                        <!-- End Datatable Info -->
+                    </div>
+                </div>
+                <!-- End Col -->
+
+                <div class="col-auto">
+                    <!-- Filter -->
+                    <div class="row align-items-sm-center">
+                        <div class="col-sm-auto">
+                            <div class="row align-items-center gx-0">
+                                <div class="col">
+                                    <span class="text-secondary me-2">Status:</span>
+                                </div>
+                                <!-- End Col -->
+
+                                <div class="col-auto">
+                                    <!-- Select -->
+                                    <div class="tom-select-custom tom-select-custom-end">
+                                        <select
+                                            class="js-select js-datatable-filter form-select form-select-sm form-select-borderless tomselected"
+                                            data-target-column-index="2" data-target-table="datatable"
+                                            autocomplete="off" tabindex="-1" hidden="hidden">
+                                            <option value="null" selected="true">All</option>
+                                            <option value="successful">Successful</option>
+                                            <option value="overdue">Overdue</option>
+                                            <option value="pending">Pending</option>
+                                        </select>
+                                        <div
+                                            class="ts-control js-select js-datatable-filter form-select form-select-sm form-select-borderless single plugin-change_listener plugin-hs_smart_position input-hidden">
+                                            <div class="items ts-input full has-items">
+                                                <div data-value="null" class="item">All</div>
+                                            </div>
+                                            <div class="tom-select-custom">
+                                                <div class="ts-dropdown single js-select js-datatable-filter form-select form-select-sm form-select-borderless plugin-change_listener plugin-hs_smart_position"
+                                                    style="display: none;">
+                                                    <div role="listbox" id="tomselect-1-ts-dropdown" tabindex="-1"
+                                                        class="ts-dropdown-content"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Select -->
+                                </div>
+                                <!-- End Col -->
+                            </div>
+                            <!-- End Row -->
+                        </div>
+                        <!-- End Col -->
+
+                        <div class="col-sm-auto">
+                            <div class="row align-items-center gx-0">
+                                <div class="col">
+                                    <span class="text-secondary me-2">Signed up:</span>
+                                </div>
+                                <!-- End Col -->
+
+                                <div class="col-auto">
+                                    <!-- Select -->
+                                    <div class="tom-select-custom tom-select-custom-end">
+                                        <select
+                                            class="js-select js-datatable-filter form-select form-select-sm form-select-borderless tomselected"
+                                            data-target-column-index="5" data-target-table="datatable"
+                                            autocomplete="off" data-hs-tom-select-options="{
+                                &quot;searchInDropdown&quot;: false,
+                                &quot;hideSearch&quot;: true,
+                                &quot;dropdownWidth&quot;: &quot;10rem&quot;
+                              }" id="tomselect-2" tabindex="-1" hidden="hidden">
+                                            <option value="null" selected="true">All</option>
+
+                                            <option value="1 year ago">1 year ago</option>
+                                            <option value="6 months ago">6 months ago</option>
+                                        </select>
+                                        <div
+                                            class="ts-control js-select js-datatable-filter form-select form-select-sm form-select-borderless single plugin-change_listener plugin-hs_smart_position input-hidden">
+                                            <div class="items ts-input full has-items">
+                                                <div data-value="null" class="item">All</div>
+                                            </div>
+                                            <div class="tom-select-custom">
+                                                <div class="ts-dropdown single js-select js-datatable-filter form-select form-select-sm form-select-borderless plugin-change_listener plugin-hs_smart_position"
+                                                    style="display: none;">
+                                                    <div role="listbox" id="tomselect-2-ts-dropdown" tabindex="-1"
+                                                        class="ts-dropdown-content"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Select -->
+                                </div>
+                                <!-- End Col -->
+                            </div>
+                            <!-- End Row -->
+                        </div>
+                        <!-- End Col -->
+
+                        <div class="col-md">
+                            <form>
+                                <!-- Search -->
+                                <div class="input-group input-group-merge input-group-flush">
+                                    <div class="input-group-prepend input-group-text">
+                                        <i class="fa fa-search"></i>
+                                    </div>
+                                    <input id="datatableSearch" type="search" class="form-control"
+                                        placeholder="Search users" aria-label="Search users">
+                                </div>
+                                <!-- End Search -->
+                            </form>
+                        </div>
+                        <!-- End Col -->
+                    </div>
+                    <!-- End Filter -->
+                </div>
+                <!-- End Col -->
+            </div>
+            <!-- End Row -->
+        </div>
+        <!-- End Header -->
+
+        <!-- Table -->
+        <div class="table-responsive datatable-custom">
+            <div id="datatable_wrapper" class="dataTables_wrapper no-footer">
+                <table id="datatable"
+                    class="table table-borderless table-thead-bordered table-nowrap table-align-middle card-table dataTable no-footer" role="grid" aria-describedby="datatable_info">
+                    <thead class="thead-light">
+                        <tr role="row text-theme">
+                            <th class="table-column-ps-0 sorting_disabled text-theme" rowspan="1" colspan="1"
+                                aria-label="Full name" style="width: 235.688px;">Full name</th>
+                            <th class="sorting text-theme" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1"
+                                aria-label="Status: activate to sort column ascending" style="width: 122.363px;">Status
+                            </th>
+                            <th class="sorting text-theme" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1"
+                                aria-label="Type: activate to sort column ascending text-theme" style="width: 157.812px;">Type</th>
+                            <th class="sorting_disabled text-theme" rowspan="1" colspan="1" aria-label="Email"
+                                style="width: 166.762px;">Email</th>
+                            <th class="sorting text-theme" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1"
+                                aria-label="Signed up: activate to sort column ascending" style="width: 127.387px;">
+                                Signed up</th>
+                            <th class="sorting text-theme" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1"
+                                aria-label="User ID: activate to sort column ascending" style="width: 94.863px;">User ID
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr role="row" class="odd">
+                            <td class="table-column-ps-0">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-shrink-0">
+                                        <div class="avatar avatar-sm avatar-circle">
+                                            <img class="avatar-img" src="https://htmlstream.com/preview/front-dashboard-v2.0/assets/img/160x160/img10.jpg"
+                                                alt="Image Description">
+                                        </div>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h5 class="text-inherit mb-0 text-theme">Amanda Harvey</h5>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-theme">Successful</td>
+                            <td class="text-theme">Unassigned</td>
+                            <td class="text-theme">amanda@site.com</td>
+                            <td class="text-theme">1 year ago</td>
+                            <td class="text-theme">67989</td>
+                        </tr>
+                        <tr role="row" class="even">
+                            <td class="table-column-ps-0">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-shrink-0">
+                                        <div class="avatar avatar-sm avatar-circle">
+                                            <img class="avatar-img" src="https://htmlstream.com/preview/front-dashboard-v2.0/assets/img/160x160/img3.jpg"
+                                                alt="Image Description">
+                                        </div>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h5 class="text-inherit mb-0 text-theme">David Harrinson</h5>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-theme">Successful</td>
+                            <td class="text-theme">Subscription</td>
+                            <td class="text-theme">anne@site.com</td>
+                            <td class="text-theme">6 months ago</td>
+                            <td class="text-theme">67326</td>
+                        </tr>
+                        
+                        <tr role="row" class="even">
+                            <td class="table-column-ps-0">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-shrink-0">
+                                        <div class="avatar avatar-sm avatar-circle">
+                                            <img class="avatar-img" src="https://htmlstream.com/preview/front-dashboard-v2.0/assets/img/160x160/img5.jpg"
+                                                alt="Image Description">
+                                        </div>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h5 class="text-inherit mb-0 text-theme">Finch Hoot</h5>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-theme">Successful</td>
+                            <td class="text-theme">Subscription</td>
+                            <td class="text-theme">anne@site.com</td>
+                            <td class="text-theme">6 months ago</td>
+                            <td class="text-theme">67326</td>
+                        </tr>
+                        <tr role="row" class="even">
+                            <td class="table-column-ps-0">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-shrink-0">
+                                        <div class="avatar avatar-sm avatar-circle">
+                                            <img class="avatar-img" src="https://htmlstream.com/preview/front-dashboard-v2.0/assets/img/160x160/img6.jpg"
+                                                alt="Image Description">
+                                        </div>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h5 class="text-inherit mb-0 text-theme">Bob Dean</h5>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-theme">Successful</td>
+                            <td class="text-theme">Subscription</td>
+                            <td class="text-theme">anne@site.com</td>
+                            <td class="text-theme">6 months ago</td>
+                            <td class="text-theme">67326</td>
+                        </tr>
+                        <tr role="row" class="even">
+                            <td class="table-column-ps-0">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-shrink-0">
+                                        <div class="avatar avatar-sm avatar-circle">
+                                            <img class="avatar-img" src="https://htmlstream.com/preview/front-dashboard-v2.0/assets/img/160x160/img7.jpg"
+                                                alt="Image Description">
+                                        </div>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h5 class="text-inherit mb-0 text-theme">Ella Lauda <i
+                                                class="fa fa-check-circle-o text-primary"></i></h5>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-theme">Successful</td>
+                            <td class="text-theme">Subscription</td>
+                            <td class="text-theme">anne@site.com</td>
+                            <td class="text-theme">6 months ago</td>
+                            <td class="text-theme">67326</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="dataTables_info" id="datatable_info" role="status" aria-live="polite">Showing 1 to 8 of 17
+                    entries</div>
+            </div>
+        </div>
+        <!-- End Table -->
+    </div>
+    <!-- End Card -->

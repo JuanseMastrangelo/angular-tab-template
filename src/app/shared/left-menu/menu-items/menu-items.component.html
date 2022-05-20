@@ -1,0 +1,18 @@
+<mat-menu #childMenu="matMenu">
+    <span *ngFor="let child of items">
+      <span *ngIf="child.Submenus && child.Submenus.length > 0">
+        <button mat-menu-item color="primary" [matMenuTriggerFor]="menu.childMenu" >
+          <!-- <mat-icon>{{child.Icono}}</mat-icon> -->
+          <span>{{child.Nombre}}</span>
+        </button>
+        <app-menu-item #menu [items]="child.Submenus"></app-menu-item>
+      </span>
+      <span *ngIf="!child.Submenus || child.Submenus.length === 0">
+        <button mat-menu-item [routerLink]="child.route" (click)="!child.Submenus?addNewTab(child.Nombre, child.Accion):null">
+            <!-- <mat-icon>{{child.Icono}}</mat-icon> -->
+            <span>{{child.Nombre}}</span>
+        </button>
+      </span>
+    </span>
+</mat-menu>
+  

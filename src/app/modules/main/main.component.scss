@@ -1,0 +1,30 @@
+
+.fa-star:hover {
+    color: rgb(255,193,7)!important;
+    background: rgba(100, 100, 100, .1);
+  }
+.active {
+    color: rgb(255,193,7)!important;
+    background: rgba(100, 100, 100, .1);
+}
+  
+.fa {
+    background: rgba(100, 100, 100, 0);
+    border-radius: 100%;
+    padding: 4px 5px;
+}
+.fa-close:hover {
+    color: rgb(220, 53, 69)!important;
+    background: rgba(100, 100, 100, .1);
+}
+
+.btn-devToolBar:hover {
+    color: var(--primary);
+}
+.list-custom {
+    list-style: none;
+    cursor: pointer;
+}
+.list-custom:hover {
+    color: var(--primary);
+}

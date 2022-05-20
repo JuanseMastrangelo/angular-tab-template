@@ -1,9 +1,9 @@
 <div class="main_content">
-  <!-- <app-header></app-header> -->
+  <app-header></app-header>
 
   <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #leftSidenav mode="side" opened>
-      <!-- <app-left-menu></app-left-menu> -->
+      <app-left-menu></app-left-menu>
     </mat-sidenav>
     <mat-sidenav-content class="m-0" [@onMainContentChange]="onSideNavChange ? 'open': 'close'">
 
@@ -11,15 +11,15 @@
 
         <div class="sideOpenTrue">
 
-          <div *ngIf="imageBackground" class="col d-flex justify-content-center align-items-center"
+          <div *ngIf="tabs === 0" class="col d-flex justify-content-center align-items-center"
             style="top: 0; left: 0;height: 90vh;">
 
             <div class="col-6 p-0 text-center">
               <img style="max-width: 100%; max-height: 400px;" [attr.src]="imageBackground" />
             </div>
             <div class="d-block">
-              <h4 class="text-theme">Area de Trabajo Vacia</h4>
-              <span class="text-theme">Elige una opción del menú para comenzar a trabajar</span>
+              <h4 class="text-theme">Empty Work Area</h4>
+              <span class="text-theme">Choose an option from the menu to start working</span>
             </div>
           </div>
 

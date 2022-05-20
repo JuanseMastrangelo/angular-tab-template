@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Tab } from 'src/app/models/ITab.model';
-import { TabService } from 'src/app/service/tab.service';
+import { TabService } from 'src/app/services/tab.service';
 
 @Component({
   selector: 'app-main',

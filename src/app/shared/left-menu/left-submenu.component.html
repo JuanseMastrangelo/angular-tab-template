@@ -1,0 +1,30 @@
+<div *ngFor="let submenu of Submenus; let i = index;" id="submenu{{submenu.Numero}}" routerLinkActive="active-link"
+	[routerLinkActiveOptions]="{exact: true}">
+	<mat-nav-list class="p-0">
+		<a (click)="!submenu.Submenus?addNewTab(submenu.Nombre, submenu.Accion):null"
+			href="#{{nombreReferencia(submenu.Nombre)}}{{Contador}}" mat-list-item matTooltip="{{submenu.Nombre}}"
+			matTooltipPosition="right" class="col-12" [ngStyle]="getPaddingLeft()" data-toggle="collapse"
+			aria-expanded="false" class="dropdown-toggle collapsed" style="height: 30px;">
+			<div class="col-12 m-0 d-flex justify-content-between align-items-center p-0">
+				<div>
+					<!-- <i class="fa {{submenu.Icono}} d-inline-block text-white"></i> -->
+					<small class="ms-2">{{submenu.Nombre}}</small>
+				</div>
+				<div>
+					<button mat-icon-button *ngIf="submenu.Submenus" class="text-secondary">
+						<mat-icon>keyboard_arrow_right</mat-icon>
+					</button>
+					<!-- <button id="btn-show-submenu" class="btn btn-sm text-secondary button-open-submenu text-white ms-1" (click)="openTab(submenu.Accion)" -->
+					<!-- matTooltip="Abrir en nueva pestaña" matTooltipPosition="right"> -->
+					<!-- <i class="fa fa-external-link" aria-hidden="true"></i> -->
+					<!-- </button> -->
+				</div>
+			</div>
+		</a>
+		<ul class="list-unstyled collapse" id="{{nombreReferencia(submenu.Nombre)}}{{Contador}}"
+			*ngIf="submenu.Submenus" [attr.data-parent]="'#submenu'+submenu.Numero">
+			<app-side-submenu [Submenus]="submenu.Submenus" [Contador]="Contador" [PaddingLeft]="PaddingLeft">
+			</app-side-submenu>
+		</ul>
+	</mat-nav-list>
+</div>

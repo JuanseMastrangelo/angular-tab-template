@@ -1,0 +1,23 @@
+.page-header-title {
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.card {
+    text-decoration: none;
+    .card-subtitle {
+        display: block;
+        text-transform: uppercase;
+        color: #91989e;
+        font-size: .71094rem;
+        margin-bottom: 0.25rem;
+    }
+}
+
+.avatar-sm .avatar-img {
+    width: 2.40625rem;
+    border-radius: 50%;
+    object-fit: cover;
+    max-width: 100%;
+    height: 100%;
+}
