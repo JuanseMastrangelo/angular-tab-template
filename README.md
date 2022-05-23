@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://angular.io/assets/images/logos/angularjs/AngularJS-Shield.svg" alt="Angular logo" width="100">
   <h1 align="center">Angular Tabs Template</h1>
-  <div align="center">Angular +12 template with tabs similar to google tabs. For management systems and large projects.</div>
+  <div align="center">Angular +12 template with tabs similar to google tabs. For management systems and big projects. Sidebar with icons on close, infinity childs and dashboard design</div>
   <div align="center">Clean code, best practices and minimalist design. Clone free.</div>
 </p>
 
@@ -12,7 +12,7 @@
 
 ## Features
 
-- Open dynamic tabs components (without routes)
+- Open dynamic tabs components (without routes, no limits)
 - Sidebar (infinity childs), font-awesome icons, open and close keep icons
 - Header: User information, notifications and more
 - Dark & light mode
