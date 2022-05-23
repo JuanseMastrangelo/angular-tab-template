@@ -9,7 +9,7 @@
 ## Features
 
 - Open dynamic tabs components (without routes)
-- Sidebar (infite childs), font-awesome icons
+- Sidebar (infinity childs), font-awesome icons, open and close keep icons
 - Header: User information, notifications and more
 - Dark & light mode
 - Dashboard design include
